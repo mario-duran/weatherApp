@@ -1,0 +1,14 @@
+<div class="row">
+
+    <a href="#/" class="float-right">Back</a><br>
+    Forecast for {{ city }}
+    <br />
+    Days: <a href="#/forecast/1">1</a> | <a href="#/forecast/5">5</a> | <a href="#/forecast/10">10</a>
+    <hr />
+    <div ng-repeat="w in results.list">
+        <div class="row">
+            <weather-result weather-day="w" conver-to-date="converToDate(daytimeTemp)" date-format="MMM, d, y"></weather-result>
+        </div>
+    </div>
+
+</div>

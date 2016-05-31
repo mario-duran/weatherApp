@@ -1,22 +1,13 @@
 <div class="jumbotron">
-  <h1>'Allo, 'Allo!</h1>
+<h2>Forecast by city</h2>
   <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#/">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
-</div>
 
-<div class="row marketing">
-  <div class="row">
-      <div class="col-md-3">
-          <h3>Forecast by city</h3>
-          <form ng-submit="submitCity()">
-              <div class="form-group">
-                  <input type="text" ng-model="city" class="form-control"/>
-                  <input type="submit" value="Get Forecast" class="btn btn-primary" />
-              </div>
-          </form>
-      </div>
-  </div>
+    <form ng-submit="submitCity()">
+        <div class="form-group">
+            <input type="text" ng-model="city" class="form-control" />
+            <br>
+            <input type="submit" value="Get Forecast" class="btn btn-primary" />
+        </div>
+    </form>
+  </p>
 </div>

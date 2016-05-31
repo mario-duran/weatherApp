@@ -9,10 +9,13 @@
 angular.module('weatherAppApp')
   .directive('weatherResult', function () {
     return {
-      template: '<div></div>',
-      restrict: 'E',
-      link: function postLink(scope, element, attrs) {
-        element.text('this is the weatherResult directive');
-      }
-    };
+           restrict: 'E',
+           templateUrl: 'views/weatherResult.html',
+           replace: true,
+           scope: {
+               weatherDay: "=",
+               converToDate: "&",
+               dateFormat: "@"
+           }
+       };
   });
