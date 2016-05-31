@@ -3,12 +3,11 @@
     <a href="#/" class="float-right">Back</a><br>
     Forecast for {{ city }}
     <br />
-    Days: <a href="#/forecast/1">1</a> | <a href="#/forecast/5">5</a> | <a href="#/forecast/10">10</a>
+    Days: <a href="#/forecast/1">Today</a> | <a href="#/forecast/5">Next 5 days</a> | <a href="#/forecast/10">Next 10 days</a>
     <hr />
+
     <div ng-repeat="w in results.list">
-        <div class="row">
-            <weather-result weather-day="w" conver-to-date="converToDate(daytimeTemp)" date-format="MMM, d, y"></weather-result>
-        </div>
+        <weather-result weather-day="w" conver-to-date="converToDate(daytimeTemp)" date-format="MMM, d, y"></weather-result>
     </div>
 
 </div>

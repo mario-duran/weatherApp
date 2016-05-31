@@ -9,6 +9,6 @@
  */
 angular.module('weatherAppApp')
   .service('cityService', function () {
-    this.city = "Chicago, Il";
-    this.metrics = "C";
+    this.city = 'Chicago, Il';
+    this.metrics = 'C';
   });

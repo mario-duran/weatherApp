@@ -1,8 +1,12 @@
-<div class="panel panel-default">
-    <div class="panel-heading">
-        <h3 class="panel-title">{{ converToDate({daytimeTemp: weatherDay.dt}) | date: dateFormat}}</h3>
+
+<div class="col-md-4 col-sm-6 portfolio-item">
+    <div class="portfolio-hover">
+        <div class="portfolio-hover-content">
+            <i class="fa fa-plus fa-3x"></i>
+        </div>
     </div>
-    <div class="panel-body">
-        Day temperature: {{ weatherDay.temp.day }}
+    <div class="portfolio-caption">
+        <h4>Day temperature: {{ weatherDay.temp.day }}</h4>
+        <p class="text-muted">{{ converToDate({daytimeTemp: weatherDay.dt}) | date: dateFormat}}</p>
     </div>
 </div>

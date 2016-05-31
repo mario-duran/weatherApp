@@ -16,7 +16,7 @@ angular.module('weatherAppApp')
     });
 
     $scope.submitCity = function() {
-        $location.path("/forecast");
+        $location.path('/forecast');
     };
 
 });

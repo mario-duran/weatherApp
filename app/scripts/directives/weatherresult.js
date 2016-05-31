@@ -13,9 +13,9 @@ angular.module('weatherAppApp')
            templateUrl: 'views/weatherResult.html',
            replace: true,
            scope: {
-               weatherDay: "=",
-               converToDate: "&",
-               dateFormat: "@"
+               weatherDay: '=',
+               converToDate: '&',
+               dateFormat: '@'
            }
        };
   });
