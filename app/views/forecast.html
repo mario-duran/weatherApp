@@ -5,9 +5,24 @@
     <br />
     Days: <a href="#/forecast/1">Today</a> | <a href="#/forecast/5">Next 5 days</a> | <a href="#/forecast/10">Next 10 days</a>
     <hr />
+    <div class="row">
+    <ng-repeat ng-repeat="w in results.list">
+      <div class="col-md-12 col-sm-12 portfolio-item" ng-if="$first">
+          <div class="portfolio-caption">
+              <h1 class="text-center">{{ w.temp.day }}</h1>
+          </div>
+      </div>
+    <div class="col-md-3 col-sm-4 portfolio-item" ng-if="!$first">
+        <div class="portfolio-caption">
+            <h3 class="text-center">{{ w.temp.day }}</h3>
+            <p>Max: {{ w.temp.max }} / Min: {{ w.temp.min }}</p>
+            <p>Humidity: {{ w.humidity }}%</p>
+            <p class="text-muted">{{ w.weather[0].description }}</p>
+            <p class="text-muted">{{ converToDate(w.dt)}}</p>
+        </div>
 
-    <div ng-repeat="w in results.list">
-        <weather-result weather-day="w" conver-to-date="converToDate(daytimeTemp)" date-format="MMM, d, y"></weather-result>
     </div>
-
+    </ng-repeat>
+  </div>
+    <!-- <weather-result weather-day="w" conver-to-date="converToDate(daytimeTemp)" date-format="MMM, d, y"  ></weather-result> -->
 </div>

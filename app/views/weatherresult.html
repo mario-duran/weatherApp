@@ -1,12 +1,11 @@
 
 <div class="col-md-4 col-sm-6 portfolio-item">
-    <div class="portfolio-hover">
-        <div class="portfolio-hover-content">
-            <i class="fa fa-plus fa-3x"></i>
-        </div>
-    </div>
     <div class="portfolio-caption">
-        <h4>Day temperature: {{ weatherDay.temp.day }}</h4>
+        {{ $first }}
+        <h1 class="text-center">{{ weatherDay.temp.day }}</h1>
+        <p>Max: {{ weatherDay.temp.max }} / Min: {{ weatherDay.temp.min }}</p>
+        <p>Humidity: {{ weatherDay.humidity }}%</p>
+        <p class="text-muted">{{ weatherDay.weather[0].description }}</p>
         <p class="text-muted">{{ converToDate({daytimeTemp: weatherDay.dt}) | date: dateFormat}}</p>
     </div>
 </div>
