@@ -3,7 +3,7 @@
     <a href="#/" class="float-right">Back</a><br>
     Forecast for {{ city }}
     <br />
-    Days: <a href="#/forecast/1">Today</a> | <a href="#/forecast/5">Next 5 days</a> | <a href="#/forecast/10">Next 10 days</a>
+    Days: <a href="#/forecast/1">Today</a> | <a href="#/forecast/7">Next 7 days</a> | <a href="#/forecast/10">Next 10 days</a>
     <hr />
     <div class="row">
     <ng-repeat ng-repeat="w in results.list">
@@ -12,13 +12,15 @@
               <h1 class="text-center">{{ w.temp.day }}</h1>
           </div>
       </div>
-    <div class="col-md-3 col-sm-4 portfolio-item" ng-if="!$first">
+    <div class="col-md-4 col-sm-4 portfolio-item" ng-if="!$first">
         <div class="portfolio-caption">
             <h3 class="text-center">{{ w.temp.day }}</h3>
+            <p class="text-muted text-center">{{ converToDate(w.dt) | date: dateFormat}}</p>
+            <p>{{ w.weather[0].description }}</p>
             <p>Max: {{ w.temp.max }} / Min: {{ w.temp.min }}</p>
             <p>Humidity: {{ w.humidity }}%</p>
-            <p class="text-muted">{{ w.weather[0].description }}</p>
-            <p class="text-muted">{{ converToDate(w.dt)}}</p>
+        
+
         </div>
 
     </div>
