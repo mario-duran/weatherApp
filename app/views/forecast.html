@@ -1,28 +1,36 @@
 <div class="row">
-
+  <div class="col-md-10 col-sm-10">
     <a href="#/" class="float-right">Back</a><br>
-    Forecast for {{ city }}
+    <h3>Forecast for {{ city }}</h3>
     <br />
-    Days: <a href="#/forecast/1">Today</a> | <a href="#/forecast/7">Next 7 days</a> | <a href="#/forecast/10">Next 10 days</a>
+    Days: <a href="#/forecast/1">Today</a> | <a href="#/forecast/7">7 days Forecast</a> | <a href="#/forecast/10">10 days Forecast</a>
+  </div>
+  <div class="col-md-2 col-sm-2">
+    <div class="btn-group" role="group" aria-label="...">
+      <button type="button" class="btn btn-default" ng-class="{'active': unitsFormat == 'metric'}" ng-click="switchUnits('metric')">&deg;C</button>
+      <button type="button" class="btn btn-default" ng-class="{'active': unitsFormat == 'imperial'}" ng-click="switchUnits('imperial')">&deg;F</button>
+    </div>
+  </div>
     <hr />
+
     <div class="row">
     <ng-repeat ng-repeat="w in results.list">
       <div class="col-md-12 col-sm-12 portfolio-item" ng-if="$first">
           <div class="portfolio-caption">
-              <h1 class="text-center">{{ w.temp.day }}</h1>
+              <h1 class="text-center">{{ w.temp.day }}&deg;</h1>
+              <p class="text-muted text-center">{{ w.weather[0].description }}</p>
+              <p class="text-muted text-center">Max: {{ w.temp.max }}&deg; / Min: {{ w.temp.min }}&deg;</p>
+              <p class="text-muted text-center">Humidity: {{ w.humidity }}%</p>
           </div>
       </div>
     <div class="col-md-4 col-sm-4 portfolio-item" ng-if="!$first">
         <div class="portfolio-caption">
-            <h3 class="text-center">{{ w.temp.day }}</h3>
+            <h3 class="text-center">{{ w.temp.day }}&deg;</h3>
             <p class="text-muted text-center">{{ converToDate(w.dt) | date: dateFormat}}</p>
             <p>{{ w.weather[0].description }}</p>
-            <p>Max: {{ w.temp.max }} / Min: {{ w.temp.min }}</p>
+            <p>Max: {{ w.temp.max }}&deg; / Min: {{ w.temp.min }}&deg;</p>
             <p>Humidity: {{ w.humidity }}%</p>
-        
-
         </div>
-
     </div>
     </ng-repeat>
   </div>

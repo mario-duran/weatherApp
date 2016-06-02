@@ -12,7 +12,16 @@ angular.module('weatherAppApp')
       $scope.city = cityService.city;
       $scope.APIKey = '8b2b94b5c687d1f6f704994875529a27';
       $scope.days = $routeParams.days || 1;
-      
+      $scope.unitsFormat = cityService.metrics;
+      $scope.results = {};
+
+      $scope.switchUnits = function(format) {
+        cityService.metrics = format;
+        $scope.unitsFormat = cityService.metrics;
+        $scope.results = {};
+        getResults();
+      };
+
       $scope.convertToF = function(degC) {
           return degC;
       };
@@ -21,8 +30,11 @@ angular.module('weatherAppApp')
           return new Date(dt * 1000);
       };
 
+      var getResults = function() {
+        $scope.results = getWeatherService.getWeather($scope.APIKey, $scope.city, $scope.days, $scope.unitsFormat);
+      };
 
-      $scope.results = getWeatherService.getWeather($scope.APIKey, $scope.city, $scope.days);
+      getResults();
 
       console.log($scope.results);
   });
